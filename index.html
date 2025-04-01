@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Flexbox Documentación</title>
+  </head>
+  <body>
+    <div id="header">
+      <a href="#menu-toggle" id="menu-toggle"><img class="menu-icon" src="menu-principal (1).png" /></a>
+      
+
+      <h1>FLEXBOX <div class="hide">Documentación</div></h1>
+      <div class="bulto"></div>
+
+      <nav id="navbar">
+        <ul>
+          <li><a class="nav-link" href="#introduction">Introducción</a></li>
+          <li><a class="nav-link" href="#basic_configuration">Configuración Básica</a></li>
+          <li><a class="nav-link" href="#flex_items">Flex Items</a></li>
+          <li><a class="nav-link" href="#common_uses">Usos Comunes</a></li>
+          <li><a class="nav-link" href="#advanced">Avanzado</a></li>
+          <li><a class="nav-link" href="#practices">Buenas Prácticas</a></li>
+          <li><a class="nav-link" href="#references">Recursos y Referencias</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main id="main-doc">
+
+      <section id="introduction" class="main-section">
+        <header><a>Introducción a Flexbox CSS</a></header>
+        <article>
+          <h3>¿Qué es Flexbox?</h3>
+          <p><b>Flexbox</b>, o <b>Flexible Box Layout</b>, es un modelo de diseño en <b>CSS</b> que permite distribuir y alinear elementos dentro de un contenedor de manera eficiente, incluso cuando sus tamaños son dinámicos o desconocidos.</p>
+
+          <p>A diferencia de los modelos de caja tradicionales basados en <code>block</code> o <code>inline</code>, Flexbox está diseñado para manejar mejor la disposición de los elementos en una dimensión a la vez (<span> fila o columna </span>), lo que lo hace ideal para estructuras responsivas y alineaciones dinámicas sin necesidad de utilizar flotantes (<code>float</code>) o posicionamiento manual.</p>
+
+          <h3>¿Por Qué usar Flexbox?</h3>
+          <p><b>Flexbox</b> es una de las soluciones más eficientes para diseñar interfaces web modernas porque simplifica la alineación, distribución y ajuste del tamaño de los elementos dentro de un contenedor.</p>
+
+          <p><b>Flexbox</b> permite distribuir, alinear y ajustar el tamaño de los elementos de forma eficiente dentro de un contenedor, adaptándose automáticamente al espacio disponible. Facilita la creación de diseños flexibles sin depender de <code>float</code> o <code>position</code>, simplificando la alineación en filas o columnas y mejorando la compatibilidad con diseños responsivos.</p>
+          
+          <h3>Principales conceptos</h3>
+          <p><b>Flexbox</b> se basa en un contenedor <b>flex</b> que organiza sus elementos internos, llamados <b>flex items</b>, en un eje principal ( <span>horizontal o vertical</span> ). Además, existe un eje secundario perpendicular al principal, que se usa para la alineación. Los elementos dentro del contenedor pueden crecer, encogerse y distribuirse según el espacio disponible.</p>
+        </article>
+      </section>
+
+      <section id="basic_configuration" class="main-section">
+        <header><a>Configuración Básica</a></header>
+        <article>
+          <h3>Flex Container</h3>
+          <p>El <b>Flex Container</b> es el elemento que activa <b>Flexbox</b> al aplicar <code>display: flex;</code>. Define cómo se organizan y comportan los elementos internos, permitiendo alinearlos y distribuirlos de manera flexible dentro del espacio disponible.</p>
+          <h3>Propiedades del Flex Container</h3>
+          <ul>
+            <li><code>justify-content</code> Controla la alineación de los elementos a lo largo del eje principal, permitiendo distribuirlos de diferentes maneras ( <span>inicio, fin, centro, espacio entre ellos</span>, etc. ).</li>
+            <li><code>align-items</code> Alinea los elementos en el eje secundario, ajustando su posición dentro del contenedor.</li>
+            <li><code>flex-direction</code> Define la dirección del eje principal, ya sea en fila ( <span>row</span> ), columna ( <span>column</span> ) o en sentido inverso.</li>
+            <li><code>order</code> Permite cambiar el orden visual de los elementos sin modificar el <b>HTML</b>.</li>
+            <li><code>align-self</code> Ajusta la alineación de un elemento individual en el eje secundario, sin afectar a los demás.</li>
+            <li><code>flex-wrap</code> Determina si los elementos se ajustan en una sola línea o si pueden envolverse cuando no hay suficiente espacio.</li>
+            <li><code>flex-flow</code> Es un atajo que combina <code>flex-direction</code> y <code>flex-wrap</code> en una sola propiedad.</li>
+            <li><code>align-content</code> Controla el espacio entre las líneas de elementos cuando hay múltiples filas o columnas.</li>
+          </ul>
+          <h3>Ejemplificación de <code>Justify-content:</code></h3>
+          
+          <div class="example-div">
+            <input type="radio" id="flex-start" name="justify-content" checked />
+            <input type="radio" id="flex-end" name="justify-content" />
+            <input type="radio" id="center" name="justify-content" />
+            <input type="radio" id="space-between" name="justify-content" />
+            <input type="radio" id="space-around" name="justify-content" />
+            <input type="radio" id="space-evenly" name="justify-content" />
+            <div class="example-label">
+              <label for="flex-start"><code>flex-start;</code></label>
+              <label for="flex-end" id="flex-end-label"><code>flex-end;</code></label>
+              <label for="center"><code>center;</code></label>
+              <label for="space-between"><code>space-between;</code></label>
+              <label for="space-around"><code>space-around;</code></label>
+              <label for="space-evenly"><code>space-evenly;</code></label>
+            </div>
+
+            <div class="example-boxes">
+              <div class="box1 boxes"><span>1</span></div>
+              <div class="box2 boxes"><span>2</span></div>
+              <div class="box2 boxes"><span>3</span></div>
+            </div>
+          </div>
+          </article>
+      </section>
+
+      <section id="flex_items" class="main-section">
+        <header><a>Flex Items</a></header>
+        <article>
+          <h3>Definición de Flex Items</h3>
+          <p><b>Flex Items</b> son los elementos hijos directos de un <b>Flex Container</b>. Estos elementos se organizan y distribuyen dentro del contenedor según las propiedades de <b>Flexbox</b>, como <code>flex-grow</code>, <code>flex-shrink</code>, y <code>flex-basis</code>, lo que permite un control flexible de su tamaño, orden y alineación.</p>
+          <h3>Propiedades de Flex Items</h3>
+          <ul>
+            <li><code>flex-grow</code> Define la capacidad de un <b>Flex Item</b> para crecer en relación con los demás elementos dentro del mismo <b>Flex Container</b>. Si un item tiene un valor mayor que los otros, ocupará más espacio disponible.</li>
+            <li><code>flex-shrink</code> Especifica cómo un <b>Flex Item</b> debe reducir su tamaño cuando hay poco espacio en el <b>Flex Container</b>. Un valor mayor indica que el item se reducirá más en comparación con otros elementos.</li>
+            <li><code>flex-basis</code> Define el tamaño inicial de un <b>Flex Item</b> antes de aplicar cualquier distribución de espacio extra o reducción. Es similar a <code>width</code> o <code>height</code>, pero se usa dentro de un contenedor flex.</li>
+            <li><code>flex</code> Es una propiedad abreviada que combina <code>flex-grow</code>, <code>flex-shrink</code> y <code>flex-basis</code>. Permite ajustar estos tres valores en una sola línea para controlar el comportamiento de los items dentro del <b>Flex Container</b>.</li>
+            <li><code>align-self</code> Permite a un <b>Flex Item</b> sobrescribir el alineamiento establecido por <code>align-items</code> en el <b>Flex Container</b>. Se usa para alinear un solo item de manera diferente respecto a los demás elementos ( por ejemplo, <span>alinearlo al inicio, centro, o fin del contenedor</span> ).</li>
+          </ul>
+          <h3>Ejemplificación de <code>align-self:</code></h3>
+          <div class="example-div">
+            <input type="radio" id="flex-start2" name="align-self" checked />
+            <input type="radio" id="flex-end2" name="align-self" />
+            <input type="radio" id="center2" name="align-self" />
+
+            <div class="example-label">
+              <label for="flex-start2"><code>flex-start;</code></label>
+              <label for="center2"><code>center;</code></label>
+              <label for="flex-end2"><code>flex-end;</code></label>
+            </div>
+
+            <div class="example-boxes2">
+              <div class="box1 boxes"><span>1</span></div>
+              <div class="box2 boxes"><span>2</span></div>
+              <div class="box2 boxes"><span>3</span></div>
+            </div>
+          </div>
+
+        </article>
+      </section>
+
+      <section id="common_uses" class="main-section">
+        <header><a>Casos de Uso Comunes</a></header>
+        <article>
+          <h3>Diseños Responsivos</h3>
+          <p><b>Flexbox</b> facilita la creación de diseños flexibles y adaptativos. Permite que los elementos dentro de un contenedor se ajusten automáticamente según el tamaño de la pantalla o el contenedor, lo que es ideal para el diseño web responsivo. Con propiedades como <code>flex-wrap</code> y <code>justify-content</code>, los elementos pueden reorganizarse y adaptarse sin necesidad de media queries complejas.</p>
+          <h3>Alineación y Distribución de Espacios</h3>
+          <p>Una de las ventajas más notables de <b>Flexbox</b> es su capacidad para alinear y distribuir los elementos de manera eficiente. Propiedades como <code>justify-content</code>, <code>align-items</code> y <code>align-self</code> permiten controlar la alineación y el espaciado de los elementos tanto a lo largo del <b>eje principal</b> como del <b>eje transversal</b>. Esto hace que la distribución de los elementos en un contenedor sea mucho más predecible y fácil de manejar.</p>
+          <h3>Menú de Navegación</h3>
+          <p><b>Flexbox</b> es muy útil para crear menús de navegación horizontales o verticales. Gracias a su capacidad de distribución de espacio y alineación, los elementos de un menú ( <span>como los enlaces o botones</span> ) pueden organizarse de forma eficiente, asegurando que se adapten a diferentes tamaños de pantalla sin perder la estética o funcionalidad.</p>
+          <h3>Cards Layout</h3>
+          <p>El diseño de tarjetas ( <span>cards layout</span> ) es muy popular en interfaces modernas y es un excelente caso de uso para <b>Flexbox</b>. Gracias a la capacidad de <b>Flexbox</b> de distribuir elementos de manera uniforme, las tarjetas pueden organizarse fácilmente en filas o columnas, adaptándose de manera eficiente a la pantalla o contenedor en el que se encuentren.</p>
+        </article>
+      </section>
+      
+      <section id="advanced" class="main-section">
+        <header><a>Avanzado</a></header>
+        <article>
+          <h3>Nidificación de Flex Containers</h3>
+          <p><b>La nidificación de Flex Containers</b> se refiere a la práctica de colocar un <b>Flex Container</b> dentro de otro <b>Flex Container</b>. Esto permite crear estructuras más complejas y flexibles, como diseños de múltiples columnas o filas que pueden ser fácilmente gestionados con <b>Flexbox</b>. Al combinar varios contenedores flexibles, puedes lograr un control preciso sobre cada sección sin complicar el código. Cada contenedor puede tener su propio sistema de alineación y distribución, lo que facilita la creación de interfaces avanzadas.</p>
+          <h3>Comportamiento con <code>flex-wrap</code></h3>
+          <p>El comportamiento de <b>Flexbox</b> puede cambiar significativamente cuando se usa la propiedad <code>flex-wrap</code>. Esta propiedad permite que los elementos dentro de un <b>Flex Container</b> se " <span>envuelvan</span> " a una nueva línea si no hay suficiente espacio disponible en la línea actual. Esto es útil para crear diseños fluidos donde los elementos cambian de posición dependiendo del tamaño del contenedor, como en galerías de imágenes o formularios que se adaptan a pantallas pequeñas. <code>flex-wrap</code> es una herramienta poderosa para asegurar que los elementos no se desborden ni se superpongan.</p>
+          <h3>Comparación con CSS Grid</h3>
+          <p>Aunque tanto <b>Flexbox</b> como <b>CSS Grid</b> son tecnologías para crear diseños en 2D, <b>Flexbox</b> es más adecuado para diseños unidimensionales ( <span>distribuir elementos en una sola fila o columna</span> ), mientras que <b>CSS Grid</b> se utiliza para diseños bidimensionales ( <span>control total sobre filas y columnas</span> ). <b>Flexbox</b> es ideal para la alineación y distribución de elementos dentro de un solo eje, mientras que <b>CSS Grid</b> te permite trabajar con dos ejes simultáneamente. Ambos tienen sus casos de uso y, a menudo, se combinan para crear diseños complejos.</p>
+          <h3>Compatibilidad y fallos comunes</h3>
+          <p>Aunque <b>Flexbox</b> es ampliamente compatible con la mayoría de los navegadores modernos, algunos navegadores más antiguos ( <span>como Internet Explorer 10 y versiones previas</span> ) pueden presentar problemas de compatibilidad. Asegúrate de verificar la compatibilidad de las propiedades de <b>Flexbox</b> que estás utilizando, especialmente si necesitas soportar navegadores antiguos. Algunos de los fallos más comunes incluyen problemas con la alineación de los elementos o el comportamiento de <code>flex-wrap</code> y <code>order</code>. Para mitigar estos problemas, se pueden usar prefijos de navegador o alternativas como <b>CSS Grid</b>.</p>
+        </article>
+      </section>
+      
+      <section id="practices" class="main-section">
+        <header><a>Buenas Prácticas</a></header>
+        <article>
+          <h3>Usar Flexbox con moderación</h3>
+          <p>Aunque <b>Flexbox</b> es muy poderoso, no siempre es la mejor opción para todos los casos. Es importante usarlo cuando realmente sea necesario, especialmente cuando trabajes con diseños más complejos que requieran una distribución dinámica de los elementos. En casos sencillos, como diseños de una sola columna o una fila de elementos, otras técnicas como el uso de <code>block</code> o <code>inline-block</code> podrían ser más adecuadas y proporcionar una mejor accesibilidad o rendimiento.</p>
+          <h3>Combinación con otras herramientas</h3>
+          <p>Flexbox funciona bien por sí solo, pero a menudo se combina con otras herramientas y técnicas de <b>CSS</b> para obtener el máximo beneficio. Por ejemplo, puedes usar <b>Flexbox</b> junto con <b>CSS</b> Grid para gestionar diseños bidimensionales mientras <b>Flexbox</b> controla la alineación y distribución unidimensional. También puedes combinar <b>Flexbox</b> con media queries para crear diseños responsivos que se adapten de manera eficiente a diferentes tamaños de pantalla.</p>
+          <h3>Optimización de rendimiento</h3>
+          <p>Al trabajar con <b>Flexbox</b>, es importante optimizar el rendimiento en dispositivos móviles y otros entornos con recursos limitados. Evita anidar múltiples niveles de <b>Flex Containers</b>, ya que esto puede generar un impacto en el rendimiento, especialmente en dispositivos más antiguos. También, es recomendable usar un número limitado de propiedades <b>Flexbox</b> para cada contenedor, ya que demasiadas reglas de alineación y distribución pueden causar cálculos de estilo innecesarios y ralentizar la renderización de la página.</p>
+        </article>
+      </section>
+      
+      <section id="references" class="main-section">
+        <header><a>Recursos y Referencias</a></header>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank">MDN Web Docs</a> - <span>Flexbox</span> es una excelente fuente de información y ejemplos sobre Flexbox. Aquí puedes encontrar documentación detallada, ejemplos interactivos y una explicación de todas las propiedades de Flexbox. Es uno de los recursos más completos y confiables para aprender sobre CSS.</li>
+          <li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a> - <span>A Complete Guide to Flexbox</span> ofrece una guía muy visual y práctica sobre cómo usar Flexbox. Es útil tanto para principiantes como para desarrolladores avanzados que buscan optimizar sus conocimientos de Flexbox. La página contiene ejemplos interactivos que muestran cómo las diferentes propiedades afectan el diseño.</li>
+          <li><a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a> es un juego interactivo que te enseña Flexbox de una manera divertida. Al jugar, ayudas a una rana y su hija a alinearse en un estanque utilizando las propiedades de Flexbox. Es un enfoque lúdico y efectivo para aprender y practicar Flexbox de forma práctica y entretenida.</li>
+        </ul>
+      </section>
+
+    </main>
+  </body>
+</html>
